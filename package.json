@@ -1,0 +1,13 @@
+{
+  "name": "doggypicker_server1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "pg": "6",
+    "sequelize": "^4.35.2",
+    "sequelize-cli": "^4.0.0"
+  }
+}
