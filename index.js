@@ -2,7 +2,6 @@ const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const userRouter = require('./users/router')
-const randomRouter = require('./randomDogs/router')
 const dogsRouter = require('./dogs/router')
 const verify = require('./jwt').verify
 const User = require('./users/model')
@@ -10,7 +9,6 @@ const User = require('./users/model')
 const app = express()
   .use(cors())
   .use(bodyParser.json())
-
 
 
 const port = process.env.PORT || 4001
@@ -26,6 +24,7 @@ app.listen(port, () => {
   to see the app in your browser.
     `)
 })
+
 
 app.use(function (req, res, next) {
   if (!req.headers.authorization) return next()
@@ -62,5 +61,4 @@ app.use(function (req, res, next) {
 
 
 app.use(userRouter)
-app.use(randomRouter)
 app.use(dogsRouter)
