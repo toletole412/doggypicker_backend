@@ -6,7 +6,7 @@ const router = new Router()
 router.get('/dogs', (req, res) => {
   const dogs = Dogs
     .findAll({
-      attributes: ['id', 'url']
+      attributes: ['userId','breed']
     })
     .then((dogs) => {
       res.json(dogs)

@@ -8,8 +8,8 @@ const router = new Router()
 
 router.post('/users', (req, res) => {
   const user = {
-    email: req.body.email,
-    password: bcrypt.hashSync(req.body.password, 10)
+    name: req.body.name,
+    password: bcrypt(req.body.password, 10)
   }
 
   Users
@@ -18,7 +18,7 @@ router.post('/users', (req, res) => {
       res.status(201)
       res.json({
         id: entity.id,
-        email: entity.email
+        name: entity.name
       })
     })
     .catch(err => {
@@ -29,14 +29,14 @@ router.post('/users', (req, res) => {
 
   router.post('/login', (req, res) => {
     const user = {
-      email: req.body.email,
+      name: req.body.name,
       password: bcrypt.hashSync(req.body.password, 10)
     }
 
-    User
+    Users
   	.findOne({
   		where: {
-  			email: req.body.email
+  			name: req.body.name
   		}
   	})
   	.then(entity => {
