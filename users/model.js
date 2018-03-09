@@ -6,11 +6,7 @@ const Users = sequelize.define('Users', {
     type: Sequelize.STRING,
     allowNull: false
   },
-  password: Sequelize.STRING,
-  dog: {
-    type: Sequelize.STRING,
-    allowNull: false
-  }
+  password: Sequelize.STRING
 }, {
   tableName: 'Users',
   timestamps: false
